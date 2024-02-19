@@ -1,7 +1,7 @@
 # CO-Project-
 
 Members:
-Tushita Kapoor 
-Rahul Agarwal
-Tarandeep Singh
-PranshU Ranga
+Tushita Kapoor <br />
+Rahul Agarwal <br />
+Tarandeep Singh <br />
+Pranhu Ranga <br />
