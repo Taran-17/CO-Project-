@@ -1,5 +1,4 @@
-
-
+import sys
 from encoding import regs
 
 def assemble_instruction(instruction):
