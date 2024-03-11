@@ -74,3 +74,7 @@ def helper(lst,result):
         print("Wrong register names \n")
 
     return result
+    
+
+
+#Corrected B-Type intructions.
