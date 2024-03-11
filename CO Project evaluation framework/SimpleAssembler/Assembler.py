@@ -37,6 +37,7 @@ for i in lines:
     linez.append(filter(i))
 print(linez)
 if halt in linez and linez.index(halt) == len(lines)-1:
+    lines=[l for l in lines if l.strip()]
     for inp in lines:
         lst = inp.strip().split(" ")  # Split the input string by spaces and store it in a list
         ls1 = []
