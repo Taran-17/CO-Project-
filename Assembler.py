@@ -38,6 +38,9 @@ for i in lines:
 print(linez)
 if halt in linez and linez.index(halt) == len(lines)-1:
     for inp in lines:
+        if inp =="\n":
+            lines.remove("\n")
+            continue
         lst = inp.strip().split(" ")  # Split the input string by spaces and store it in a list
         ls1 = []
         ls2 = []
@@ -96,25 +99,4 @@ elif halt not in linez:
 
 
 
-
-# start: lui t0,100
-#     addi t1,t0,-50
-#     bge t1,zero,end
-#     bltu t2,t1,start
-#     addi t2,t1,20
-#     add t3,t1,t2
-#     jal gp,-512
-#     jalr t4,t0,0
-# end: beq zero,zero,0
-
-
-# 00000000000000000000001010110111
-# 11111100111000101000001100010011
-# 11111110000000110101010011100011
-# 00000000011000111110011001100011
-# 00000001010000110000001110010011
-# 00000000011100110000111000110011
-# 11100000000111111111000111101111
-# 00000000000000101000111011100111
-# 00000000000000000000000001100011
 
