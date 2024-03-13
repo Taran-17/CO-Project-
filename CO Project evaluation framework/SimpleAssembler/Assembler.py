@@ -55,8 +55,8 @@ if halt in linez and linez.index(halt) == len(lines)-1:
         if ":" in lst[0]:
             label = lst[0]
             lst.pop(0)
-            if  helper(lst, result):
-                label_dict.update({label[:-1]: Program_counter+4})
+            # if  helper(lst, result):
+            label_dict[label[:-1]]= Program_counter+4
 
         Program_counter+= 4
         count += 1
