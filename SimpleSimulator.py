@@ -107,8 +107,10 @@ pc = 0
 prog_track = []
 
 while pc< 4 * len(lin):
-    if pc not in prog_track:
-        i = lin[int(pc/4)]
+    
+    i = lin[int(pc/4)]
+    if i = "00000000000000000000000001100011" :
+        break
     opcode = i[-7:]
     type_ins = type_of_ins(opcode)
     if type_ins == "R":
@@ -162,7 +164,7 @@ while pc< 4 * len(lin):
             prog_value = function.jalr(rs1_value, imm,prog,rd_value)[1]
             regis_value[rd] = rd_value
             regis_value["prog"] = prog_value
-            prog_track.append(int(int(regis_value["prog"],2)))
+            # prog_track.append(int(int(regis_value["prog"],2)))
         elif opcode == "0010011":
             if func3 == "000":
                 rd_value = function.addi(imm,rs1_value)
@@ -218,32 +220,32 @@ while pc< 4 * len(lin):
         if func3 == "000":
             prog_value = function.beq(rs2_value,rs1_value,imm,prog)
             regis_value["prog"] =prog_value
-            prog_track.append(int(int(regis_value["prog"],2)))
+            # prog_track.append(int(int(regis_value["prog"],2)))
             # i = lin[int(int(prog_value,2)/4)]
         elif func3 == "001":
             prog_value = function.bne(rs2_value,rs1_value,imm,prog)
             regis_value["prog"] =prog_value
-            prog_track.append(int(int(regis_value["prog"],2)))
+            # prog_track.append(int(int(regis_value["prog"],2)))
             # i = lin[int(int(prog_value,2)/4)]
         elif func3 == "100":
             prog_value = function.blt(rs2_value,rs1_value,imm,prog)
             regis_value["prog"] =prog_value
-            prog_track.append(int(int(regis_value["prog"],2)))
+            # prog_track.append(int(int(regis_value["prog"],2)))
             # i = lin[int(int(prog_value,2)/4)]
         elif func3 == "101":
             prog_value = function.bge(rs2_value,rs1_value,imm,prog)
             regis_value["prog"] =prog_value
-            prog_track.append(int(int(regis_value["prog"],2)))
+            # prog_track.append(int(int(regis_value["prog"],2)))
             # i = lin[int(int(prog_value,2)/4)]
         elif func3 == "110":
             prog_value = function.bltu(rs2_value,rs1_value,imm,prog)
             regis_value["prog"] =prog_value
-            prog_track.append(int(int(regis_value["prog"],2)))
+            # prog_track.append(int(int(regis_value["prog"],2)))
             # i = lin[int(int(prog_value,2)/4)]
         elif func3 == "111":
             prog_value = function.bgeu(rs2_value,rs1_value,imm,prog)
             regis_value["prog"] =prog_value
-            prog_track.append(int(int(regis_value["prog"],2)))
+            # prog_track.append(int(int(regis_value["prog"],2)))
             # i = lin[int(int(prog_value,2)/4)]
         # pc = int(int(prog_value,2)/4)
         # print(pc)
@@ -257,7 +259,7 @@ while pc< 4 * len(lin):
         prog_value = function.jal(rd_value,prog,imm)[1]
         regis_value[rd] = rd_value1
         regis_value["prog"] = prog_value
-        prog_track.append(int(int(regis_value["prog"],2)))
+        # prog_track.append(int(int(regis_value["prog"],2)))
         # i = lin[int(int(prog_value,2)/4)]
         # pc = int(int(prog_value,2)/4)
         # print(pc)
