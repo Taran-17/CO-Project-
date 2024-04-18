@@ -109,7 +109,7 @@ prog_track = []
 while pc< 4 * len(lin):
     
     i = lin[int(pc/4)]
-    if i = "00000000000000000000000001100011" :
+    if i == "00000000000000000000000001100011" :
         break
     opcode = i[-7:]
     type_ins = type_of_ins(opcode)
@@ -124,31 +124,31 @@ while pc< 4 * len(lin):
         func7 = i[-32:-25]
         if func3 == "000":
             if func7 == "0100000":
-                rd_value = function.sub(rs1_value,rs2_value)
+                rd_value = function.sub(rd_value,rs1_value,rs2_value)
                 regis_value[rd] = rd_value
             else:
-                rd_value = function.add(rs1_value, rs2_value)
+                rd_value = function.add(rd_value,rs1_value, rs2_value)
                 regis_value[rd] = rd_value
         elif func3 == "001":
-            rd_value = function.sll(rs1_value, rs2_value, rd_value)
+            rd_value = function.sll(rd_value,rs1_value, rs2_value)
             regis_value[rd] = rd_value
         elif func3 == "010":
-            rd_value = function.slt(rs1_value, rs2_value, rd_value)
+            rd_value = function.slt(rd_value, rs1_value, rs2_value)
             regis_value[rd] = rd_value
         elif func3 == "011":
-            rd_value = function.sltu(rs1_value, rs2_value, rd_value)
+            rd_value = function.sltu(rd_value, rs1_value, rs2_value)
             regis_value[rd] = rd_value
         elif func3 == "100":
-            rd_value = function.xor(rs1_value, rs2_value, rd_value)
+            rd_value = function.xor(rd_value, rs1_value, rs2_value)
             regis_value[rd] = rd_value
         elif func3 == "101":
-            rd_value = function.srl(rs1_value, rs2_value, rd_value)
+            rd_value = function.srl(rd_value, rs1_value, rs2_value)
             regis_value[rd] = rd_value
         elif func3 == "110":
-            rd_value = function.bitwise_or(rs1_value, rs2_value, rd_value)
+            rd_value = function.bitwise_or(rd_value, rs1_value, rs2_value)
             regis_value[rd] = rd_value
         elif func3 == "111":
-            rd_value = function.bitwise_and(rs1_value, rs2_value, rd_value)
+            rd_value = function.bitwise_and(rd_value, rs1_value, rs2_value)
             regis_value[rd] = rd_value
         pc_bin = prog_count(regis_value["prog"])
         regis_value["prog"] = pc_bin
@@ -276,7 +276,6 @@ while pc< 4 * len(lin):
 
 for key,value in mem_count.items():
     print(key, ":",value)
-
 
 
 
