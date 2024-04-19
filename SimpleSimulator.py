@@ -4,16 +4,12 @@ from function import *
 from helper import *
 import sys
 # from Assembler import *
+input_file = sys.argv[0]
+output_file = sys.argv[1]
+res1= open(input_file, 'r')
+test1 = open(output_file ,'w')
+line = res1.readlines()
 
-
-# input_file = "output.txt"
-# output_file = "output1.txt"
-#
-#
-# res1= open(input_file, 'w')
-# test1 = open(output_file ,'r')
-# line = res1.readlines()
-#
 # lin = []
 # print(lin)
 # for i in line:
@@ -76,25 +72,7 @@ def type_of_ins(instruction):
             if j == instruction:
                 return key
 
-lin = ["00000000000000000000010010110011",
-    "00000000000000000000100100110011",
-    "00000000000100000000010010010011",
-    "00000001000000000000100100010011",
-    "00000001001001001001010010110011",
-    "00000000101100000000101010010011",
-    "00000001010101001010000000100011",
-    "00000000000001001010100100000011",
-    "00000000010001001000010010010011",
-    "00000000000100000000100110010011",
-    "00000001001110010111100100110011",
-    "00000001001000000000100001100011",
-    "00000000001100000000101000010011",
-    "00000001010001001010000000100011",
-    "00000000000000000000000001100011",
-    "00000000001000000000101000010011",
-    "00000001010001001010000000100011",
-    "00000000000000000000000001100011"
-    ]
+
 
 def prog_count(pc):
     pc_decimal = int(pc,2)
@@ -103,12 +81,10 @@ def prog_count(pc):
     return pc_bin
 
 pc = 0
-
 prog_track = []
-
-while pc< 4 * len(lin):
+while pc< 4 * len(line):
     
-    i = lin[int(pc/4)]
+    i = line[int(pc/4)]
     if i == "00000000000000000000000001100011" :
         break
     opcode = i[-7:]
@@ -271,11 +247,11 @@ while pc< 4 * len(lin):
     # print(pc)
     # pc = pc+1
     # print(regis_value["prog"])
-    print(" ".join(["0b" + value for value in regis_value.values()]))
+    test1.write(" ".join(["0b" + value for value in regis_value.values()]))
     # print(pc)
 
 for key,value in mem_count.items():
-    print(key, ":",value)
+    test1.write(key, ":",value)
 
 
 
